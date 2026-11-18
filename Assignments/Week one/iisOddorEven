@@ -1,0 +1,13 @@
+let valueToCheck
+function isOddOrEven(valueToCheck)
+{
+ if(valueToCheck%2==0)
+ {
+    console.log(valueToCheck +" "+"is even number")
+ }
+    else{
+    console.log(valueToCheck +" "+"is odd number")
+    }
+ }
+isOddOrEven(99)
+isOddOrEven(88)

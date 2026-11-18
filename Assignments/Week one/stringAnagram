@@ -1,0 +1,31 @@
+let s="Hello World"
+let s1=s.split(" ")
+console.log("Length of last word in array is",s1[1].length);
+
+                    
+let input= new String("   fly me   to   the moon  ")
+let s2=input.trim()
+let s3=s2.split(" ")
+// console.log(s3.length-1);
+console.log("length of last word",s3[8].length);
+
+function checkitis(str1,str2)
+{
+     str1=str1.toLowerCase()
+     str2=str2.toLowerCase()
+    if (str1.length!==str2.length)
+    {
+        console.log("Length not matched")
+    }
+    else{
+        let arr=str1.split("")
+        let arr1=str2.split("")
+        let a=arr.sort().join("")
+        let b=arr1.sort().join("")
+        let result=a===b
+        console.log("String is Anagram")
+        console.log(result)
+    
+}}
+checkitis("listen","silent")
+checkitis("hello","world")

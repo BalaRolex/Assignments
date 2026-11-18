@@ -1,0 +1,33 @@
+let givenNumber
+function identifyNumberType(givenNumber)
+{
+    if(givenNumber>0)
+    {
+        console.log(givenNumber+" "+"is positive number");
+        
+    }
+   else if(givenNumber<0)
+   {
+        console.log(givenNumber+" "+"is negative number");
+   }
+   else{
+       console.log(givenNumber+" "+"is neutral number");
+   }
+}
+identifyNumberType(-100000)
+identifyNumberType(100000)
+identifyNumberType(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
