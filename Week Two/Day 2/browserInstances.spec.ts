@@ -1,27 +1,22 @@
-import {chromium, test, webkit} from '@playwright/test'
-test('RedBus In Edge',async () => {
+import { chromium, expect, test, webkit } from '@playwright/test'
+test('RedBus In Edge', async () => {
 
-    let browser=await chromium.launch({headless:false,channel:'msedge'})
-    let context=await browser.newContext()
-    let page=await context.newPage()
+    const browser = await chromium.launch({ headless: false, channel: 'msedge' })
+    const context = await browser.newContext()
+    const page = await context.newPage()
     await page.goto('https://www.redbus.in/')
-    //await page.waitForTimeout(50000)
-    let title=await page.title()
-    let url=await page.url()
-    console.log("Redbus Title:",title)
-    console.log("Redbus URL:",url)
+    await expect(page).toHaveTitle(await page.title())
+    await expect(page).toHaveURL(page.url())
+    await browser.close()
 
 })
-test('RedBus In Webkit',async () => {
-
-    let browser=await webkit.launch()
-    let context=await browser.newContext()
-    let page=await context.newPage()
+test.only('Flipkart In Webkit', async () => {
+    const browser = await webkit.launch()
+    const context = await browser.newContext()
+    const page = await context.newPage()
     await page.goto('https://www.flipkart.com/')
-    //await page.waitForTimeout(50000)
-    let title=await page.title()
-    let url=await page.url()
-    console.log("Flipkart Title:",title)
-    console.log("Flipkart URL:",url)
+    await expect(page).toHaveTitle(await page.title())
+    await expect(page).toHaveURL(page.url())
+    await browser.close()
 
 })
